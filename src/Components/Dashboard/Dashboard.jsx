@@ -1,8 +1,6 @@
-import { CheckBoxControl, 
-  FormButton, 
+import { FormButton, 
   InputControl, 
-  SelectControl, 
-  TextAreaControl } from '../FormControls/FormControls';
+  SelectControl } from '../FormControls/FormControls';
 import { useForm } from '../../tests/useForm';
 import styles from './Dashboard.css';
 
@@ -12,58 +10,43 @@ export default function Dashboard() {
   return (
     <div className={styles.Dashboard}>
       <h2>
-        Hello World
+        Shopping List
       </h2>
       <form>
         <InputControl 
-          label="Name"
-          name="name"
-          placeholder="Enter your name"
-          value={data.name || ''}
+          label="Item"
+          name="item"
+          placeholder="Enter an item"
+          required
+          value={data.item || ''}
           onChange={handleChange}  
         />
 
         <InputControl
-          label="Date"
-          type="date"
+          label="Quantity"
+          type="number"
           required
-          name="date"
-          placeholder="Pick a date"
-          value={data.date}
+          name="quantity"
+          placeholder="How many do you need?"
+          value={data.quantity}
           onChange={handleChange}
         />
 
         <SelectControl
-          label="Pets"
-          required
-          name="pets"
-          placeholder="What is your favorite pet?"
-          value={data.pets || ''}
+          label="Aisle/Section"
+          name="aisle"
+          placeholder="Where can this item be found?"
+          value={data.aisle || ''}
           onChange={handleChange}
         >
-          <option value="1">Dog</option>
-          <option value="2">Cat</option>
-          <option value="3">Birb</option>
+          <option value="produce">Produce</option>
+          <option value="bakery">Bakery</option>
+          <option value="frozen">Frozen</option>
         </SelectControl>
 
-        <TextAreaControl 
-          label="Bio"
-          name="bio"
-          placeholder="Tell us about yourself"
-          value={data.bio || ''}
-          onChange={handleChange}
-        />
-
-        <CheckBoxControl 
-          legend="Do you accept?"
-          label="Yes"
-          required
-          name="accepted"
-          checked={data.accepted || false}
-          onChange={handleChange}
-        />
-
-        <FormButton text="Submit" />
+        <FormButton>
+          Add Item
+        </FormButton>
       </form>
     </div>
   );

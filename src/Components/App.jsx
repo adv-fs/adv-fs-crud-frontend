@@ -2,13 +2,11 @@ import { BrowserRouter as Router,
   Routes, 
   Route,  } from 'react-router-dom';
 import Layout from './Page-Layouts/Layout';
-import About from './About/About';
+import List from './Lists/List';
 import Connect from './Connect/Connect';
-import Pets from './About/Pets';
-import Hiking from './About/Hiking';
-import Other from './About/Other';
+import Hiking from './Lists/Hiking';
 import Dashboard from './Dashboard/Dashboard';
-import Search from './Search/Search';
+import Auth from './Auth/Auth';
 
 export default function App() {
   return (
@@ -16,13 +14,11 @@ export default function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Dashboard />} />
-          <Route path="about" element={<About />} >
-            <Route index element={<Pets />} />
+          <Route path="list" element={<List />} >
             <Route path="hiking" element={<Hiking />} />
-            <Route path="other" element={<Other />} />
           </Route>
           
-          <Route path="projects" element={<Search />} />
+          <Route path="auth" element={<Auth />} />
             
           <Route path="connect" element={<Connect />} />
         </Route>
