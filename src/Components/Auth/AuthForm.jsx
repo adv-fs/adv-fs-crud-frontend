@@ -4,7 +4,7 @@ import { FormButton,
 import styles from './Auth.css';
 import { useForm } from '../FormControls/useForm';
 
-export default function SearchForm({ onSubmit }) {
+export default function AuthForm({ onSubmit }) {
   const { handleChange, } = useForm();
     
   const formSubmit = (e) => {

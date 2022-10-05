@@ -1,7 +1,7 @@
 import { FormButton, 
   InputControl, 
   SelectControl } from '../FormControls/FormControls';
-import { useForm } from '../../tests/useForm';
+import { useForm } from '../FormControls/useForm';
 import styles from './Dashboard.css';
 
 export default function Dashboard() {
