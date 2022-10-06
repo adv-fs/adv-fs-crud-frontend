@@ -1,4 +1,4 @@
-async function fetch(url, method, body) {
+async function doFetch(url, method, body) {
   const options = {
     method,
     headers: {
@@ -18,9 +18,9 @@ async function fetch(url, method, body) {
   return { error, data };
 }
 
-export const get = (url) => fetch(url, 'GET');
-export const post = (url, body) => fetch(url, 'POST', body);
-export const put = (url, body) => fetch(url, 'PUT', body);
-export const patch = (url, body) => fetch(url, 'PATCH', body);
-export const del = (url) => fetch(url, 'DELETE');
+export const get = (url) => doFetch(url, 'GET');
+export const post = (url, body) => doFetch(url, 'POST', body);
+export const put = (url, body) => doFetch(url, 'PUT', body);
+export const patch = (url, body) => doFetch(url, 'PATCH', body);
+export const del = (url) => doFetch(url, 'DELETE');
 

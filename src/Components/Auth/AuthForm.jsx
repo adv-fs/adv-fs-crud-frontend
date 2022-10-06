@@ -1,40 +1,74 @@
-import { FormButton, 
-  InputControl,
-} from '../FormControls/FormControls';
-import styles from './Auth.css';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../../Context/UserContext';
+import { FormButton, InputControl, } from '../FormControls/FormControls';
 import { useForm } from '../FormControls/useForm';
+import styles from './Auth.css';
 
-export default function AuthForm({ onSubmit }) {
-  const { handleChange, } = useForm();
+export default function AuthForm({ mode = 'signin' }) {
+  const { signUp, signIn, error } = useAuth();
+  const [credentials, handleChange] = useForm({
+    email: '',
+    password: '',
+  });
     
-  const formSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const formDataObject = Object.fromEntries(formData);
-    onSubmit(formDataObject);
+    await type.action(credentials); 
   };
 
+  const signin = {
+    prompt: 'Sign into your account',
+    button: 'Sign In',
+    switch: {
+      prompt: 'Need to create an account?',
+      link: 'signup',
+    },
+    action: signIn,
+  };
+
+  const signup = {
+    prompt: 'Create an account',
+    button: 'Sign Up',
+    switch: {
+      prompt: 'Already have an account?',
+      link: '../',
+    },
+    action: signUp,
+  };
+
+  const modes = { signin, signup };
+  const type = modes[mode];
+
   return (
-    <form className={styles.SearchForm} onSubmit={formSubmit}>
+    <form className={styles.AuthForm} onSubmit={handleSubmit}>
+      <h2>{type.prompt}</h2>
+
       <InputControl 
-        type="email"
-        label="Email/Username"
+        label="Email"
         name="email"
+        type="email"
         required
-        value={email}
+        value={credentials.email}
         onChange={handleChange}
       />
+
       <InputControl
         label="Password"
         name="password"
         type="password"
-        placeholder=""
         required
-        value={password}
+        value={credentials.password}
         onChange={handleChange}
       />
        
-      <FormButton type="submit">Search</FormButton>
+      <FormButton type="submit">{type.button}</FormButton>
+      <p className="error">{error}</p>
+
+      <nav>
+        <Link to={type.switch.link}>
+          {type.switch.prompt}
+        </Link>
+      </nav>
     </form>
   );
 }

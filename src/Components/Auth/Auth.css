@@ -9,3 +9,12 @@
     grid-column: 3fr;
     margin-bottom: 15px;
 }
+
+.AuthForm a {
+    margin-top: 5px;
+    color: black
+}
+
+.AuthForm .error {
+    color: red;
+}
