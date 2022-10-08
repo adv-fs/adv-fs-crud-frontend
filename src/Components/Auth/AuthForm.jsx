@@ -21,7 +21,7 @@ export default function AuthForm({ mode = 'signin' }) {
     button: 'Sign In',
     switch: {
       prompt: 'Need to create an account?',
-      link: 'signup',
+      link: './signup',
     },
     action: signIn,
   };
