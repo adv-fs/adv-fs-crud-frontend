@@ -21,7 +21,7 @@ export default function AuthForm({ mode = 'signin' }) {
     button: 'Sign In',
     switch: {
       prompt: 'Need to create an account?',
-      link: './signup',
+      link: '../',
     },
     action: signIn,
   };
@@ -31,7 +31,7 @@ export default function AuthForm({ mode = 'signin' }) {
     button: 'Sign Up',
     switch: {
       prompt: 'Already have an account?',
-      link: '../',
+      link: './signin',
     },
     action: signUp,
   };
