@@ -8,7 +8,7 @@ import {
   SelectControl,
   TextAreaControl,
 } from '../Components/FormControls/FormControls.jsx';
-import { useForm } from './useForm.js';
+import { useForm } from '../Components/FormControls/useForm';
 
 function Test({ onSubmit, formData }) {
   const [data, handleChange] = useForm(formData);
