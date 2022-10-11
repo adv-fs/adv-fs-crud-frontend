@@ -8,7 +8,7 @@ import {
   SelectControl,
   TextAreaControl,
 } from '../Components/FormControls/FormControls.jsx';
-import { useForm } from './useForm.js';
+import { useForm } from './useFormTest';
 
 function Test({ onSubmit, formData }) {
   const [data, handleChange] = useForm(formData);
@@ -161,14 +161,14 @@ test('Form updates data when initialData changes', async () => {
 
   // input text
   const input = screen.getByLabelText('Name');
-  await user.clear(input);
   await user.type(input, 'abc');
+  await user.clear(input);
 
   const changedData = {
-    accepted: false,
-    animal: '2',
-    bio: 'Tell me about YOURself',
     name: 'Mind Ya Business',
+    pets: '2',
+    bio: 'Tell me about YOURself',
+    accepted: false,
   };
 
   rerender (

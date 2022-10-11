@@ -1,0 +1,20 @@
+.Auth {
+    display: grid;
+    width: 100%;
+    justify-items: center;
+}
+
+.AuthForm {
+    display: grid;
+    grid-column: 3fr;
+    margin-bottom: 15px;
+}
+
+.AuthForm a {
+    margin-top: 5px;
+    color: black
+}
+
+.AuthForm .error {
+    color: red;
+}

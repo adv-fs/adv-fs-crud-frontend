@@ -1,16 +1,15 @@
 import { Link, Outlet } from 'react-router-dom';
-import styles from './About.css';
+import styles from './List.css';
 
 export default function About() {
   return (
-    <div className={styles.About}>
+    <div className={styles.List}>
       <h2>
         About Page
       </h2>
       <nav className={styles.nav}>
-        <Link to="">Pets</Link>
-        <Link to="hiking">Hiking</Link>
-        <Link to="other">Other</Link>
+        <Link to="">Hiking</Link>
+     
       </nav>
       <Outlet />
     </div>

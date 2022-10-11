@@ -8,11 +8,11 @@ export default function Navigation() {
       <NavLink to="/">
         Home
       </NavLink>
-      <NavLink to="about">
-        About
+      <NavLink to="list">
+        List
       </NavLink>
-      <NavLink to="projects">
-        Projects
+      <NavLink to="auth">
+        Auth
       </NavLink>
       <NavLink to="connect">
         Connect
