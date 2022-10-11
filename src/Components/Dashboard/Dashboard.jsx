@@ -1,6 +1,5 @@
 import { FormButton, 
-  InputControl, 
-  SelectControl } from '../FormControls/FormControls';
+  InputControl } from '../FormControls/FormControls';
 import { useForm } from '../FormControls/useForm';
 import styles from './Dashboard.css';
 
@@ -22,32 +21,14 @@ export default function Dashboard() {
           onChange={handleChange}  
         />
 
-        <InputControl
-          label="Quantity"
-          type="number"
-          required
-          name="quantity"
-          placeholder="How many do you need?"
-          value={data.quantity}
-          onChange={handleChange}
-        />
-
-        <SelectControl
-          label="Aisle/Section"
-          name="aisle"
-          placeholder="Where can this item be found?"
-          value={data.aisle || ''}
-          onChange={handleChange}
-        >
-          <option value="produce">Produce</option>
-          <option value="bakery">Bakery</option>
-          <option value="frozen">Frozen</option>
-        </SelectControl>
-
         <FormButton>
           Add Item
         </FormButton>
       </form>
+
+      <ul>
+        
+      </ul>
     </div>
   );
 }
