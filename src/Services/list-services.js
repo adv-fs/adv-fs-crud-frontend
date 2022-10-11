@@ -1,6 +1,6 @@
 import { get, post } from './fetch.js';
  
-const URL = 'http://localhost:3000/api/v1/shopping';
+const URL = 'https://adv-fs-brien.herokuapp.com/api/v1/shopping';
 
 export async function getList() {
   return await get(URL);
