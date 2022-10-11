@@ -17,8 +17,8 @@ export default function App() {
       <UserProvider>
         <Routes>
           <Route path="auth" element={<Auth />}>
-            <Route index element={<AuthForm mode="signin" />}/>
-            <Route path="signup" element={<AuthForm mode="signup" />} />
+            <Route index element={<AuthForm mode="signup" />}/>
+            <Route path="signin" element={<AuthForm mode="signin" />} />
           </Route>
 
           <Route element={<ProtectedRoute />}>

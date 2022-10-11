@@ -1,10 +1,10 @@
 import { get, post, del } from './fetch.js';
 
-const URL = 'https://adv-fs-brien.herokuapp.com/api/v1/auth';
+const URL = 'http://localhost:3000/api/v1/auth';
 
 
 export async function signUpUser(credentials) {
-  const response = await post(`${URL}/signup`, credentials);
+  const response = await post(`${URL}`, credentials);
   response.user = response.data;
   return response;
 }
